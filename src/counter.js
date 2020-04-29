@@ -1,47 +1,50 @@
 import React from 'react'
 import Proptypes from 'prop-types'
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 export class Counter extends React.Component {
-    constructor(props) 
-    {
+    constructor(props) {
         super(props);
-        this.state ={
-            counterVal : 0
+        this.state = {
+            counterVal: 0
         }
         this.increase = this.increase.bind(this);
         this.decrease = this.decrease.bind(this);
         this.reset = this.reset.bind(this);
     }
 
-    increase(){
+    increase() {
         this.setState({
-            counterVal :this.state.counterVal + 1
+            counterVal: this.state.counterVal + 1
         });
     }
-    decrease(){
+    decrease() {
         this.setState({
-            counterVal :this.state.counterVal - 1
+            counterVal: this.state.counterVal - 1
         });
     }
-    reset(){
+    reset() {
         this.setState({
-            counterVal :0
+            counterVal: 0
         });
     }
 
     render() {
         return <div>
             <h1>{this.props.counterHeader} {this.state.counterVal}</h1>
-            <button onClick={this.increase}>Increase</button>
-            <button onClick={this.decrease}>Decrease</button>
-            <button onClick={this.reset}>Reset</button>
+            <ButtonGroup>
+                <Button variant="success" onClick={this.increase}>Increase</Button>
+                <Button variant="warning"  onClick={this.decrease}>Decrease</Button>
+                <Button variant="danger"  onClick={this.reset}>Reset</Button>
+            </ButtonGroup>
         </div>
     }
 }
-Counter.propTypes={
-    counterHeader:Proptypes.string.isRequired
+Counter.propTypes = {
+    counterHeader: Proptypes.string.isRequired
 
 }
-Counter.defaultProps  ={
-    counterHeader:"Counter Value : "
+Counter.defaultProps = {
+    counterHeader: "Counter Value : "
 }
