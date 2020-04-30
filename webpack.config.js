@@ -1,7 +1,8 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+  // devtool : "inline-source-map",
   module: {
     rules: [
       {
@@ -23,7 +24,7 @@ module.exports = {
       {
         test: /\.(jpeg|jpg|png)$/,
         use: [{
-          loader: 'file-loader',
+          loader: "file-loader",
           options: {
             esModule: false
           }
@@ -38,11 +39,11 @@ module.exports = {
             options: {
               // you can specify a publicPath here
               // by default it uses publicPath in webpackOptions.output
-              publicPath: '../',
-              hmr: process.env.NODE_ENV === 'development',
+              publicPath: "../",
+              hmr: process.env.NODE_ENV === "development",
             },
           },
-          'css-loader',
+          "css-loader",
         ],
       }
     ]
@@ -55,8 +56,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: "[name].css",
+      chunkFilename: "[id].css",
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ]
