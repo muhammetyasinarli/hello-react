@@ -2,6 +2,7 @@ import React from 'react'
 import Proptypes from 'prop-types'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import './styles/main.css';
 
 export class Counter extends React.Component {
     constructor(props) {
@@ -34,9 +35,9 @@ export class Counter extends React.Component {
         return <div>
             <h1>{this.props.counterHeader} {this.state.counterVal}</h1>
             <ButtonGroup>
-                <Button variant="success" onClick={this.increase}>Increase</Button>
-                <Button variant="warning"  onClick={this.decrease}>Decrease</Button>
-                <Button variant="danger"  onClick={this.reset}>Reset</Button>
+                <Button variant="success" className="fxWidth" onClick={this.increase}>Increase</Button>
+                <Button variant="warning" className="fxWidth"  onClick={this.decrease}>Decrease</Button>
+                <Button variant="danger" className="fxWidth"  onClick={this.reset}>Reset</Button>
             </ButtonGroup>
         </div>
     }
