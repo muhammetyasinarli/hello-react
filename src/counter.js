@@ -10,22 +10,19 @@ export class Counter extends React.Component {
         this.state = {
             counterVal: 0
         };
-        this.increase = this.increase.bind(this);
-        this.decrease = this.decrease.bind(this);
-        this.reset = this.reset.bind(this);
     }
 
-    increase() {
+    increase =() =>{
         this.setState({
             counterVal: this.state.counterVal + 1
         });
     }
-    decrease() {
+    decrease =() =>{
         this.setState({
             counterVal: this.state.counterVal - 1
         });
     }
-    reset() {
+    reset =()=> {
         this.setState({
             counterVal: 0
         });
